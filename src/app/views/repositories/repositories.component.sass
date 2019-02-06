@@ -1,0 +1,81 @@
+.navbar
+  position: relative
+  top: 0
+  width: 100%
+
+  .navbar__brand
+    color: white
+    padding: 0;
+
+    img
+      max-height: 40px;
+
+    span.divider
+      background-color: white;
+      display: inline-block;
+      height: 40px;
+      margin: 0 1.2em 0 .8em;
+      width: 1px;
+
+.panel
+  background-color: white
+  border-radius: 5px
+  margin: 3em auto
+  max-width: 1170px
+
+  .panel-header
+    border-bottom: 1px solid #efefef;
+    padding: 20px;
+
+    h2
+      color: #0054af;
+      font-size: 26px;
+      font-weight: lighter;
+      margin: 0
+      text-transform: uppercase
+
+  .panel-body
+    padding: 10px 20px
+
+.data-item
+  align-items: center
+  border-bottom: 1px solid #CCC
+  display: flex
+  justify-content: space-between
+  padding: 20px 0
+
+  &:last-child
+    border-bottom: 0
+
+  .data-item__content
+    width: 25%
+    text-align: center
+
+    &.--main
+      width: 50%
+      text-align: left
+
+    &:last-child
+      text-align: right
+
+  .data-item__label
+    color: #b1b1b1
+    font-size: 14px
+    font-weight: bold
+    margin: 0 0 -5px
+    text-transform: uppercase
+
+  .data-item__title
+    color: #0084ff
+    font-size: 22px
+    margin: 0
+
+  .data-item__description
+    color: #666;
+    font-size: 15px;
+
+  .data-item__forks,
+  .data-item__stars
+    color: #fd9307;
+    font-size: 36px;
+    font-weight: bold;
