@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from '../../../environments/environment';
 
@@ -13,47 +13,23 @@ export class LoginComponent implements OnInit {
   private code: string = null
   github: any = environment.github;
 
-  constructor(private routeParam: ActivatedRoute, public api: HttpClient) { }
+  constructor(private routeParam: ActivatedRoute, private api: HttpClient, private route: Router) { }
 
   ngOnInit() {
-    // this.api.post(`https://api.github.com/authorizations/clients/${this.github.clientId}`, {
-    //   client_secret: this.github.clientSecret,
-    //   scope: ['user_email', 'public_repo', 'private_repo'],
-    //   note: 'Pan app'
-    // })
-    // .subscribe(resp => {
-    //   console.log(resp)
-    // })
-
-    
-
     this.routeParam.queryParams.subscribe(query => {
-      this.code = query.code;
-      console.log(query)
-      if (this.code){
-        this.getToken(this.code).subscribe(respo => {
+      console.log(query.code)
+      if (query.code){
+        this.getToken(query.code).subscribe(respo => {
           console.log(respo)
+          sessionStorage.setItem('user', JSON.stringify(respo));
+          this.route.navigateByUrl('/repositories')
         })
       }
     })
   }
 
   getToken(clientCode){
-
-    const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      })
-    }
-
-    const credentials = {
-      client_id: this.github.clientId,
-      client_secret: this.github.clientSecret,
-      code: clientCode
-    }
-
-    return this.api.post(`https://github.com/login/oauth/access_token`, credentials, options)
+    return this.api.post(`https://auth-github-server.herokuapp.com/oauth/accesstoken`, {code: clientCode})
   }
 
 }
