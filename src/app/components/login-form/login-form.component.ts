@@ -8,7 +8,7 @@ import { environment } from '../../../environments/environment';
 })
 export class LoginFormComponent implements OnInit {
   @Input() titulo: string;
-  github: object = environment.github;
+  github: any = environment.github;
 
   constructor() { }
 

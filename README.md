@@ -1,27 +1,21 @@
-# GithubBancopan
+# Github / Banco Pan
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
+Aplicação teste para o processo de seleção do banco Pan. Projeto gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 7.1.4.
 
-## Development server
+## Configuração do projeto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone este repositório com `git clone ` ou faça o download dos arquivos, bavegue até a pastea do projeto e execute `npm install` para instalar as dependências do projeto
 
-## Code scaffolding
+## Servidor local
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+No terminal execute `ng serve` caso tenha o [Angular CLI](https://github.com/angular/angular-cli) instalado globalmente nem seu computador. Caso contrario, execute `npm run dev:serve` para usar o Angular CLI instalado no projeto. 
 
-## Build
+## Build para Produção
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Para preparar o build para produção, execure `ng build --prod` caso tenha o [Angular CLI](https://github.com/angular/angular-cli) instalado globalmente nem seu computador. Caso contrato, execute `npm run build:prod` para usar o Angular CLI instalado no projeto. 
 
-## Running unit tests
+## Sevidor Proxy
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Para contornar o problemas com o CORS no endpont para obter o access_token usado na autenticação dos requests, configurei um pequeno servidor em [Express](https://expressjs.com/) com o endpoint `https://auth-github-server.herokuapp.com/oauth/accesstoken`. O código fonte do servidor pode ser visualizado [neste repositório](https://github.com/roliveira-com/auth-github)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
