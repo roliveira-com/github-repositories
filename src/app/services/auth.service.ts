@@ -25,7 +25,7 @@ export class AuthService {
   getUser(): Observable<any> {
     return this.http.get(`https://api.github.com/user`)
       .pipe(tap(user => {
-        this.user = { ...this.user, ...user };
+        Object.assign(this.user, { ...this.user, ...user });
         sessionStorage.setItem('user', JSON.stringify(this.user));
       }))
   }
