@@ -1,3 +1,9 @@
+@keyframes spinAround
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)
+  
 .login-form
   background-color: white;
   border-radius: 5px;
@@ -32,3 +38,53 @@
     height: 40px;
     margin: 0 1.2em 0 .8em;
     width: 1px;
+
+.btn   
+  border: 0;
+  display: block;
+  font-size: 18px;
+  margin: 0;
+  padding: 1em;
+  width: 100%;
+
+  &.btn-github
+    background-color: #3a3636;
+    border-radius: 10px;
+    color: white;
+    padding: .8em 0 1.5em;
+    position: relative
+    text-align: center
+    text-decoration: none
+
+    &::before
+      background-image: url(/assets/image/logo/github-mark.png)
+      background-size: cover
+      content: ""
+      display: inline-block
+      height: 30px
+      margin: 0 10px 0 0;
+      position: relative;
+      top: 8px;
+      width: 30px
+
+    &.is-loading
+      color: transparent
+
+    &.is-loading::before
+      background-image: none
+
+    &.is-loading::after
+      animation: spinAround 500ms infinite linear;
+      border: 2px solid #dbdbdb;
+      border-radius: 290486px;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      content: "";
+      display: block;
+      height: 1em;
+      position: relative;
+      width: 1em;
+      position: absolute;
+      left: calc(50% - (1em / 2));
+      top: calc(50% - (1em / 2));
+      border-color: transparent transparent #FFF #FFF !important;

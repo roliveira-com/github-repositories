@@ -4,20 +4,6 @@
     <h2>Seus repositórios</h2>
   </div>
   <div class="panel-body">
-    <div class="data-item" *ngFor="let repo of repos">
-      <div class="data-item__content --main">
-        <!-- <p class="data-item__label">repositório</p> -->
-        <h3 class="data-item__title">{{ repo.name }}</h3>
-        <div class="data-item__description">{{ repo.description }}</div>
-      </div>
-      <div class="data-item__content">
-        <p class="data-item__label">stars</p>
-        <span class="data-item__stars">{{ repo.stargazers_count }}</span>
-      </div>
-      <div class="data-item__content">
-        <p class="data-item__label">forks</p>
-<span class="data-item__forks">{{ repo.forks_count }}</span>
-      </div>
-    </div>
+    <list-item *ngFor="let repo of repos" [item]="repo"></list-item>
   </div>
 </div>

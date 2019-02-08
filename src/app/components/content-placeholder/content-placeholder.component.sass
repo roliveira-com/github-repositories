@@ -1,0 +1,57 @@
+@-webkit-keyframes placeHolderShimmer 
+  0% 
+    background-position: -468px 0
+  
+  100% 
+    background-position: 468px 0
+ 
+
+@keyframes placeHolderShimmer 
+  0% 
+    background-position: -468px 0
+  
+  100% 
+    background-position: 468px 0
+  
+
+.content-placeholder__content 
+  display: inline-block
+  animation-duration: 2s
+  animation-fill-mode: forwards
+  animation-iteration-count: infinite
+  animation-name: placeHolderShimmer
+  animation-timing-function: linear
+  background: #f6f7f8
+  background: -webkit-gradient(linear, left top, right top, color-stop(8%, #eeeeee), color-stop(18%, #dddddd), color-stop(33%, #eeeeee))
+  background: -webkit-linear-gradient(left, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+  background-size: cover
+  margin-bottom: 10px
+  position: relative
+
+  &.--title
+    height: 30px
+    width: 250px
+
+  &.--text-line
+    height: 15px
+    width: 100%
+
+  &.--digits
+    height: 40px
+    width: 30px
+
+.content-placeholder
+  display: flex
+
+  .content-placeholder__column
+    align-items: center
+    display: flex
+    flex-flow: column
+    text-align: left
+
+    &.--width_50
+        width: 50%
+
+    &.--width_25
+        width: 25%

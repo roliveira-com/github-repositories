@@ -1,11 +1,12 @@
 <div class="login-header">
   <img src="/assets/image/logo/github-logo.png" alt="">
-  <span class="divider"></span>
-  <img src="/assets/image/logo/pan-logo.svg" alt="">
+  <!-- <span class="divider"></span>
+  <img src="/assets/image/logo/pan-logo.svg" alt=""> -->
 </div>
 <div class="login-form">
   <h1>{{ titulo }}</h1>
   <hr>
-  <a href="https://github.com/login/oauth/authorize?scope=user:email,repo&client_id={{ github.clientId }}" class="btn btn-github">Logar com o Github</a>
+  <button class="btn btn-github" [ngClass]="{ 'is-loading' : loading }" (click)="authorize()">Entrar com o github</button>
+  <!-- <a href="https://github.com/login/oauth/authorize?scope=user:email,repo&client_id={{ github.clientId }}" [ngClass]="['btn','btn-github']">Logar com o Github</a> -->
 </div>
 

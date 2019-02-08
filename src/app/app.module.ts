@@ -13,6 +13,8 @@ import { AuthService } from './services/auth.service';
 import { ContentService } from './services/content.service';
 import { AuthGuard } from './auth/auth.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListItemComponent } from './components/list-item/list-item.component';
+import { ContentPlaceholderComponent } from './components/content-placeholder/content-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginComponent,
     RepositoriesComponent,
     LoginFormComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListItemComponent,
+    ContentPlaceholderComponent
   ],
   imports: [
     BrowserModule,
