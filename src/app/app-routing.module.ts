@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { RepositoriesComponent } from './views/repositories/repositories.component';
 
-import { AuthGuard } from './services/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
