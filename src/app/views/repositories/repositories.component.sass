@@ -1,7 +1,34 @@
 .navbar
+  align-items: center
+  display: flex
+  color: white
+  justify-content: space-between
+  padding: 0 20px
   position: relative
   top: 0
   width: 100%
+  
+  .navvar__username:after
+    background-color: white;
+    bottom: -20px;
+    content: "";
+    display: inline-block;
+    height: 50px;
+    margin: 0 15px;
+    position: relative;
+    width: 2px;
+
+  .navbar__button
+    background-color: transparent
+    border: 2px solid white
+    border-radius: 5px
+    color: white
+    cursor: pointer
+    font-size: 16px
+    padding: 10px 1em
+    position: relative
+
+
 
   .navbar__brand
     color: white
