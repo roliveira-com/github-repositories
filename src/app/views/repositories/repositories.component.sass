@@ -1,49 +1,3 @@
-.navbar
-  align-items: center
-  display: flex
-  color: white
-  justify-content: space-between
-  padding: 0 20px
-  position: relative
-  top: 0
-  width: 100%
-  
-  .navvar__username:after
-    background-color: white;
-    bottom: -20px;
-    content: "";
-    display: inline-block;
-    height: 50px;
-    margin: 0 15px;
-    position: relative;
-    width: 2px;
-
-  .navbar__button
-    background-color: transparent
-    border: 2px solid white
-    border-radius: 5px
-    color: white
-    cursor: pointer
-    font-size: 16px
-    padding: 10px 1em
-    position: relative
-
-
-
-  .navbar__brand
-    color: white
-    padding: 0;
-
-    img
-      max-height: 40px;
-
-    span.divider
-      background-color: white;
-      display: inline-block;
-      height: 40px;
-      margin: 0 1.2em 0 .8em;
-      width: 1px;
-
 .panel
   background-color: white
   border-radius: 5px
@@ -67,23 +21,35 @@
 .data-item
   align-items: center
   border-bottom: 1px solid #CCC
-  display: flex
+  display: block
   justify-content: space-between
   padding: 20px 0
+  @media screen and (min-width: 968px)
+    display: flex
 
   &:last-child
     border-bottom: 0
 
   .data-item__content
-    width: 25%
+    display: inline-block
+    margin-top: 1em
+    width: 50%
     text-align: center
+    @media screen and (min-width: 968px)
+      margin-top: 0
+      width: 25%
+      text-align: center
 
     &.--main
-      width: 50%
+      width: 100%
       text-align: left
+      @media screen and (min-width: 968px)
+        width: 50%
 
     &:last-child
-      text-align: right
+      text-align: center
+      @media screen and (min-width: 968px)
+        text-align: right
 
   .data-item__label
     color: #b1b1b1

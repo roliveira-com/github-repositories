@@ -14,14 +14,6 @@ export class AuthService {
     this.user = JSON.parse(sessionStorage.getItem('user')) || null;
   }
 
-  getUser(): Observable<any>{
-    return this.http.get(`https://api.github.com/user`)
-        .pipe(tap(user => {
-          this.user = { ...this.user, ...user };
-          sessionStorage.setItem('user', JSON.stringify(this.user));
-        }))
-  }
-
   login(clientCode): Observable<any> {
     return this.http.post(`https://auth-github-server.herokuapp.com/oauth/accesstoken`, { code: clientCode })
       .pipe(tap(credentials => {
@@ -29,6 +21,15 @@ export class AuthService {
         this.getUser().subscribe()
       }))
   }
+
+  getUser(): Observable<any> {
+    return this.http.get(`https://api.github.com/user`)
+      .pipe(tap(user => {
+        this.user = { ...this.user, ...user };
+        sessionStorage.setItem('user', JSON.stringify(this.user));
+      }))
+  }
+
 
   logout(){
     this.user = null;

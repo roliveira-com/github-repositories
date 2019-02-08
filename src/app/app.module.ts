@@ -12,13 +12,15 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { AuthService } from './services/auth.service';
 import { ContentService } from './services/content.service';
 import { AuthGuard } from './services/auth.guard';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RepositoriesComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

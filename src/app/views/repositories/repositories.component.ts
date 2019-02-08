@@ -20,8 +20,4 @@ export class RepositoriesComponent implements OnInit {
     this.api.getRepositories().subscribe(repos => this.repos = repos)
   }
 
-  logout(){
-    this.auth.logout();
-  }
-
 }
