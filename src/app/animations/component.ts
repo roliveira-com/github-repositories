@@ -3,13 +3,13 @@ import { trigger, state, style, transition, animate, animation, useAnimation } f
 export const SlideDownEnter = trigger('slidedownenter', [
   transition(':enter', [
     style({
-      transform: 'translateX(100%)',
-      opacity: 0
+      transform: 'translateY(-150%)',
     }),
-    animate(300)
+    animate(100, style({
+      transform: 'translateY(0)'
+    }))
   ]),
-  transition(':leave', animate(300, style({
-    transform: 'scale(0.5)',
-    opacity: 0
+  transition(':leave', animate(100, style({
+    transform: 'translateY(100%)',
   })))
 ]);

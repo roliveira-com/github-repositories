@@ -3,12 +3,12 @@ import { trigger, state, style, transition, animate, animation, useAnimation } f
 export const RouteTransition = trigger('routeScaleOutSlideIn', [
   transition(':enter', [
     style({
-      transform: 'translateX(100%)',
+      transform: 'translateY(100%)',
       opacity: 0
     }),
-    animate(300)
+    animate(100)
   ]),
-  transition(':leave', animate(300, style({
+  transition(':leave', animate(100, style({
     transform: 'scale(0.5)',
     opacity: 0
   })))
